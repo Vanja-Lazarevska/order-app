@@ -1,0 +1,26 @@
+
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+mat-toolbar {
+    background-color: #744253;
+}
+.logo:hover{
+  cursor: pointer;
+  color: black
+}
+
+.logo {
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+.login {
+  margin-right: 2%;
+
+}
+.login:hover{
+    cursor: pointer;
+    color:black
+}

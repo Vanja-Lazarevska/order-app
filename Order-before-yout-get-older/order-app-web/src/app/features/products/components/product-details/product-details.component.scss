@@ -1,0 +1,22 @@
+img {
+    width: 23vw;
+    height: 50vh;
+}
+
+.item1 { grid-area: picture; }
+.item2 { grid-area: header; }
+.item3 { grid-area: description; }
+.item4 { grid-area: price; }
+.item5 { grid-area: inStock; }
+
+.grid-container {
+  display: grid;
+  margin: 5%;
+  grid-template-areas:
+    'picture picture picture description description description'
+    'picture picture picture price price price'
+    'header header header inStock inStock inStock';
+}
+
+
+

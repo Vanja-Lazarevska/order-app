@@ -1,0 +1,11 @@
+
+<div class="grid-container">
+    <img class="item1" [src]="imageUrl ? imageUrl : product.imageUrl">
+    <h1 class="item2">Product: {{name ? name : product.name}}</h1>
+    <h3 class="item3">{{description ? description : product.description}}</h3>
+    <p class="item4">Price: {{price ?  price : product.price | currency}}</p>
+    <p class="item5">In Stock: {{inStock ?  inStock :  product.stock}}</p>
+</div>
+
+<!-- {{product.category}} -->
+

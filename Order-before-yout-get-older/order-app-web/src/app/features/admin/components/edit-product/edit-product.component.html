@@ -1,0 +1,69 @@
+<div class="editProducts">
+    <form *ngIf="editForm" [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <mat-card>
+        <mat-card-title>
+          Edit product in Database
+        </mat-card-title>
+
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Product name:</mat-label>
+                <input formControlName="name" matInput type="text" placeholder="Product name" >
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Description:</mat-label>
+                <textarea matNativeControl formControlName="description"></textarea>
+            </mat-form-field>
+                <div *ngIf="editForm.get('description')?.touched && editForm.get('description')?.invalid">
+                <div class="error" *ngIf="editForm.get('description')?.hasError('max')">Description can not be longer then 100 characters !</div>
+            </div>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Price:</mat-label>
+                <input formControlName="price" type="number" matInput placeholder="Price" >
+            </mat-form-field>
+            <div *ngIf="editForm.get('price')?.touched && editForm.get('price')?.invalid">
+                <div class="error" *ngIf="editForm.get('price')?.hasError('min')">Price can not be lower than 1 !</div>
+            </div>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Category of product: </mat-label>
+                <select formControlName="category" matNativeControl>
+                    <option value=""></option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Books">Books</option>
+                    <option value="Sports">Sports</option>
+                </select>
+            </mat-form-field>
+            <div *ngIf="editForm.get('category')?.touched && editForm.get('category')?.invalid">
+                <div class="error" *ngIf="editForm.get('category')?.hasError('required')">Category is required !</div>
+            </div>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>Image Url:</mat-label>
+                <input formControlName="imageUrl" type="string" matInput placeholder="Image Url">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>In stock:</mat-label>
+                <input formControlName="stock" type="number" matInput placeholder="In stock">
+            </mat-form-field>
+            <div *ngIf="editForm.get('stock')?.touched && editForm.get('stock')?.invalid">
+                <div class="error" *ngIf="editForm.get('stock')?.hasError('min')">Stock for product must be grater than 1 !</div>
+            </div>
+        </mat-card-content>
+
+
+        <mat-card-actions>
+            <div class="button">
+              <button  mat-raised-button color="primary" >Edit product</button>
+            </div>
+          </mat-card-actions>
+    </mat-card>
+    </form>
+
+    
+</div>

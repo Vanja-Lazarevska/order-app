@@ -1,0 +1,49 @@
+
+<form class="checkOutForm" [formGroup]="checkOutForm" (ngSubmit)="handleSubmitForm()" *ngIf="checkOutForm">
+    <mat-card>
+      <mat-card-title>
+        Check Out
+      </mat-card-title>
+      <mat-card-content>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+          <div class="inputField">
+            <input formControlName="address" matInput type="text" placeholder="Address">
+          </div>
+          <mat-error *ngIf="checkOutForm.get('address')?.hasError('required')">
+            Address is required !          
+        </mat-error>
+        </mat-form-field>
+     
+        <br/>
+        <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+          <div  class="inputField">
+            <input formControlName="city" type="text" matInput placeholder="City"/>
+          </div>      
+          <mat-error *ngIf="checkOutForm.get('city')?.hasError('required')">
+            City is required !        
+        </mat-error>
+        </mat-form-field>
+  
+
+        <mat-form-field appearance="outline">
+            <mat-label>Country</mat-label>
+          <div class="inputField">
+            <input formControlName="country" matInput type="tel" placeholder="Country">
+        </div>
+        <mat-error *ngIf="checkOutForm.get('country')?.hasError('required')">
+            Country is required !
+        </mat-error>
+
+        </mat-form-field>
+ 
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="button">
+          <button mat-raised-button color="primary" [disabled]="!checkOutForm.valid">Place Order</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+</form>

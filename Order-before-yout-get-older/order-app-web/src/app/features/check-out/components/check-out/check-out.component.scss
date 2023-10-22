@@ -1,0 +1,26 @@
+.checkOutForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+    
+  }
+  
+  .button {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .inputField{
+    display: flex;
+  }
+
+  mat-card{
+    width: 27vw;
+    height: fit-content;
+    text-align: center;
+    padding: 4%;
+    background-color: rgba(0, 0, 0, 0.343);
+    box-shadow: 1px 27px 50px -6px #744253;
+  }

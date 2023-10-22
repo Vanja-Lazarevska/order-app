@@ -1,0 +1,49 @@
+.noContent{
+    text-align: center;
+  }
+
+ 
+  .mat-mdc-row .mat-mdc-cell {
+   border-bottom: 1px solid transparent;
+   border-top: 1px solid transparent;
+   cursor: pointer;
+ }
+ 
+ .mat-mdc-row:hover .mat-mdc-cell {
+   border-color: currentColor;
+ }
+ 
+ table {
+   background-color: #b49286;
+ }
+ 
+ th {
+   font-weight:bolder;
+   font-size: larger;
+ }
+ 
+ .total{
+   background-color: #b492862d;
+   width:fit-content;
+   font-size: larger;
+   border: 1px solid #744253;
+   border-radius: 5px;
+   text-align: center;
+   margin-top: 1%;
+   position: relative;
+   left: 90%;
+   padding: 3px;
+   color: white;
+ 
+ }
+ 
+ button {
+   background-color: #b49286;
+   color: white;
+   border: none;
+   cursor: pointer;
+ }
+ 
+ button:hover {
+   color:black
+ }

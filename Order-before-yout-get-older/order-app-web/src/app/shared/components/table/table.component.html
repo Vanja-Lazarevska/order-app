@@ -1,0 +1,51 @@
+<table mat-table [dataSource]="eachOrder" class="mat-elevation-z8 table " *ngIf="eachOrder.length; else noOrders" >
+
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element index as i"> {{i + 1}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity"  >
+        <th mat-header-cell *matHeaderCellDef> Quantity </th>
+        <td mat-cell *matCellDef="let element"> {{editShowed?element.stock:element.quantity}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price per product">
+      <th mat-header-cell *matHeaderCellDef> Price per product </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="total price">
+        <th mat-header-cell *matHeaderCellDef> Total price</th>
+        <td mat-cell *matCellDef="let element"> {{ handleTotalPrice(element) | currency: 'USD'}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"><button type="button" (click)="editShowed ? handleDeleteFromDb(element.id): handleDelete(element.id,element)"><mat-icon>delete</mat-icon></button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit" *ngIf="editShowed">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"><button type="button" (click)="handleEdit(element.id)"><mat-icon>edit</mat-icon></button></td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <div class="total" *ngIf="!editShowed && eachOrder.length">Sum {{handleSumOfOrders() }}</div>
+  <button class="total" *ngIf="!editShowed && eachOrder.length" routerLink="/check-out">Check out</button>
+
+  
+
+<ng-template #noOrders>
+    <h2 class="noContent">No products selected yet, go to products page and select yours.</h2>
+</ng-template>

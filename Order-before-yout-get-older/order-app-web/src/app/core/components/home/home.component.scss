@@ -1,0 +1,59 @@
+.container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.mainContainer{
+  display: flex;
+  justify-content: space-between;
+  margin: 5%;
+  gap: 5%
+
+
+}
+
+h1 {
+  text-align: center;
+  margin: 5%;
+  font-style: italic;
+  border-bottom:2px solid #744253
+}
+
+mat-list {
+  position:sticky;
+  top: 5%
+}
+
+
+header{
+    text-align: center;
+    border-bottom: 2px solid #b49286;
+    padding: 3%;
+}
+
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  mat-list {
+    height: fit-content;
+    text-align: center;
+    border-radius: 10%;
+    margin-top: 2%;
+    width: 30%;
+    background-color: #744253;
+  }
+
+  mat-list-item:hover {
+
+    border: 1px solid white;
+    cursor: pointer;
+  }
+
+
+  

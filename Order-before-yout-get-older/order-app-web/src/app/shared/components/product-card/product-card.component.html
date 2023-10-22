@@ -1,0 +1,13 @@
+
+<mat-card class="backgroud" >
+        <mat-card-title>{{product.name}}</mat-card-title>
+        <img mat-card-lg-image src={{product.imageUrl}} width="300" [routerLink]="['/products/withId', product.id]">
+    
+    <mat-card-content >
+        <mat-card-subtitle>Price: {{product.price}} $</mat-card-subtitle>
+        <button mat-button [disabled]="product.stock === 0"(click)="handleClickOrder(product.id)">Order</button>
+    </mat-card-content>
+</mat-card>
+<div>
+</div>
+

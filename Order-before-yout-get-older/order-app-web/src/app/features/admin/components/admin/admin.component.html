@@ -1,0 +1,16 @@
+<header>
+  <h1>Admin Page</h1>
+  <h3>Make changes that will affect products in database</h3>
+</header>
+
+
+<main>
+  <app-table [editShowed]="true" [eachOrder]="allProducts" (productDeleted)="getAllProducts()"></app-table>
+    <h3>Click on the button if you want to add some new products !</h3>
+    <button mat-fab color="accent" extended *ngIf="addToProduct" (click)="toggleAddToProduct()">
+        <mat-icon>add</mat-icon>
+        Add product
+      </button>
+
+      <app-add-product *ngIf="!addToProduct" [addToProduct]="toggleAddToProduct" ></app-add-product>
+</main>

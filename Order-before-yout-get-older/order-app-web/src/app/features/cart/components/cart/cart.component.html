@@ -1,0 +1,5 @@
+<h1>{{ title }}</h1>
+<app-table [editShowed]="false" [eachOrder]="orderedProducts"></app-table>
+<button mat-raised-button class="btnColor" *ngIf="orderedProducts.length !== 0" (click)="handleDeleteCart()">Clear cart</button>
+
+

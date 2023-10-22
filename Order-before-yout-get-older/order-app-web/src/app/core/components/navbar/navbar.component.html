@@ -1,0 +1,15 @@
+
+<mat-toolbar>
+ <span routerLink="/" class="logo">B&B</span>
+ <button mat-icon-button class="example-icon cart-icon" aria-label="Example icon-button with cart icon" routerLink="cart">
+  <mat-icon [matBadge]='productsOrdered' matBadgeColor="warn" >shopping_cart</mat-icon>
+ </button>
+ <span class="example-spacer"></span>
+ <span *ngIf="!isUserloggedIn" class="login"  routerLink="/auth/login">Login</span>
+ <span class="login" *ngIf="isUserloggedIn" (click)="handleLogout()">Logout</span>
+<span class="login" *ngIf="isUserloggedIn" routerLink="/admin">Admin</span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+

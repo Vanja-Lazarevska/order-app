@@ -1,0 +1,11 @@
+h1 {
+    text-align: center;
+    border-bottom: 2px solid #b49286;
+    padding: 3%;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
